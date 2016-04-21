@@ -1,0 +1,17 @@
+total 80
+drwxrwxr-x 2 ai ai 4096  4月 21 19:56 .
+drwxrwxr-x 3 ai ai 4096  4月 20 20:21 ..
+-rw-rw-r-- 1 ai ai  417  4月 20 20:19 30.1.c
+-rw-rw-r-- 1 ai ai  436  4月 20 20:30 30.2.c
+-rw-rw-r-- 1 ai ai  752  4月 20 20:54 30.3.c
+-rwxrwxr-x 1 ai ai 8872  4月 21 19:27 a.out
+-rw-rw-r-- 1 ai ai   16  4月 21 20:00 catfile
+-rw-rw-r-- 1 ai ai   54  4月 21 19:51 err.txt
+-rw-rw-r-- 1 ai ai  437  4月 20 21:02 execlp.c
+-rw-rw-r-- 1 ai ai   50  4月 21 19:19 file.txt
+-rw-rw-r-- 1 ai ai    0  4月 21 20:02 suc.txt
+-rw-rw-r-- 1 ai ai    0  4月 21 19:48 test.sh
+-rwxrwxr-x 1 ai ai 8632  4月 20 21:07 upper
+-rw-rw-r-- 1 ai ai  431  4月 21 19:18 upper.c
+-rwxrwxr-x 1 ai ai 8872  4月 21 19:27 wrapper
+-rw-rw-r-- 1 ai ai  718  4月 21 19:27 wrapper.c
