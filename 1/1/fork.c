@@ -1,12 +1,12 @@
 /*************************************************************************
-	> File Name: 1.1.c
+	> File Name: fork.c
 	> Author: 
 	> Mail: 
-	> Created Time: 2016年03月31日 星期四 14时24分11秒
+	> Created Time: 2016年04月23日 星期六 17时35分25秒
  ************************************************************************/
 
-#include <stdio.h>
-#include <unistd.h>
+#include<stdio.h>
+#include<unistd.h>
 int main()
 {
     int p, x;
@@ -14,14 +14,11 @@ int main()
     if (p > 0)
     {
         fork();
-        printf("parent output x = %d\n", ++x);
     }
-    else 
-
+    else
     {
         fork();
         fork();
-        printf("child output x = %d\n", ++x);
     }
     sleep(5);
     return 0;

@@ -16,10 +16,12 @@ int main()
         printf("parent\n");
     else
     {
-        printf("\nbefore execute exec\n");
-        execl("/bin/ps", "ps", "-l", (char *)0);
+        printf("before execute exec\n");
+        //execl("/bin/ps","ps","-l",(char *)0);
         printf("after execute exec\n");
+        printf("second");
     }
+    sleep(5);
 
     return 0;
 }

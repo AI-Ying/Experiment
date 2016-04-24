@@ -28,6 +28,7 @@ int main()
     }
     else 
     {
+        fork();
         message = "This is the parent\n";
         n = 3;
     }

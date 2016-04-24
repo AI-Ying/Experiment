@@ -2,18 +2,28 @@
 	> File Name: 1.3.c
 	> Author: 
 	> Mail: 
-	> Created Time: 2016年03月31日 星期四 15时01分47秒
+	> Created Time: 2016年04月23日 星期六 19时34分40秒
  ************************************************************************/
 
 #include<stdio.h>
-#include <unistd.h>
+#include<stdlib.h>
+#include<unistd.h>
+
 int main()
 {
     int p, x;
     p = vfork();
-    if (p>0)
-        printf("parent output x = %d\n", ++x);
+    if (p > 0)
+    {
+        printf("parent = %d\n", ++x);
+    }
+    if (p == 0)
+    {
+        printf("child = %d\n", ++x);
+    }
     else
-        printf("parent output x = %d\n", ++x);
+    {
+        exit(0);
+    }
     return 0;
 }

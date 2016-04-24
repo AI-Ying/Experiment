@@ -13,10 +13,12 @@ int main()
     if (p > 0)
     {
         fork();
+        printf("parent = %d\n", ++x);
+        fork();
     }
     else
     {
-        fork();
+        printf("child = %d\n", ++x);
         fork();
         fork();
     }
