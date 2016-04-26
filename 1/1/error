@@ -1,0 +1,60 @@
+1-6.c: In function ‘main’:
+1-6.c:25:15: error: incompatible type for argument 1 of ‘lockf’
+         lockf(*fp, 1, 0);           /*加锁*/
+               ^
+In file included from 1-6.c:9:0:
+/usr/include/unistd.h:1081:12: note: expected ‘int’ but argument is of type ‘FILE {aka struct _IO_FILE}’
+ extern int lockf (int __fd, int __cmd, __off_t __len) __wur;
+            ^
+1-6.c:28:15: error: incompatible type for argument 1 of ‘lockf’
+         lockf(*fp, 0, 0);           /*解锁*/
+               ^
+In file included from 1-6.c:9:0:
+/usr/include/unistd.h:1081:12: note: expected ‘int’ but argument is of type ‘FILE {aka struct _IO_FILE}’
+ extern int lockf (int __fd, int __cmd, __off_t __len) __wur;
+            ^
+1-6.c:35:19: error: incompatible type for argument 1 of ‘lockf’
+             lockf(*fp, 1, 0);      /*加锁*/
+                   ^
+In file included from 1-6.c:9:0:
+/usr/include/unistd.h:1081:12: note: expected ‘int’ but argument is of type ‘FILE {aka struct _IO_FILE}’
+ extern int lockf (int __fd, int __cmd, __off_t __len) __wur;
+            ^
+1-6.c:37:24: warning: passing argument 1 of ‘printf’ from incompatible pointer type [-Wincompatible-pointer-types]
+                 printf(fp, "son %d\n", i);
+                        ^
+In file included from 1-6.c:8:0:
+/usr/include/stdio.h:362:12: note: expected ‘const char * restrict’ but argument is of type ‘FILE * {aka struct _IO_FILE *}’
+ extern int printf (const char *__restrict __format, ...);
+            ^
+1-6.c:38:19: error: incompatible type for argument 1 of ‘lockf’
+             lockf(*fp, 0, 0);      /*解锁*/
+                   ^
+In file included from 1-6.c:9:0:
+/usr/include/unistd.h:1081:12: note: expected ‘int’ but argument is of type ‘FILE {aka struct _IO_FILE}’
+ extern int lockf (int __fd, int __cmd, __off_t __len) __wur;
+            ^
+1-6.c:43:13: warning: implicit declaration of function ‘wait’ [-Wimplicit-function-declaration]
+             wait(NULL);
+             ^
+1-6.c:44:19: error: incompatible type for argument 1 of ‘lockf’
+             lockf(*fp, 1, 0);      /*加锁*/ 
+                   ^
+In file included from 1-6.c:9:0:
+/usr/include/unistd.h:1081:12: note: expected ‘int’ but argument is of type ‘FILE {aka struct _IO_FILE}’
+ extern int lockf (int __fd, int __cmd, __off_t __len) __wur;
+            ^
+1-6.c:46:24: warning: passing argument 1 of ‘printf’ from incompatible pointer type [-Wincompatible-pointer-types]
+                 printf(fp, "parent %d\n", i);
+                        ^
+In file included from 1-6.c:8:0:
+/usr/include/stdio.h:362:12: note: expected ‘const char * restrict’ but argument is of type ‘FILE * {aka struct _IO_FILE *}’
+ extern int printf (const char *__restrict __format, ...);
+            ^
+1-6.c:47:19: error: incompatible type for argument 1 of ‘lockf’
+             lockf(*fp, 0, 0);      /*解锁*/
+                   ^
+In file included from 1-6.c:9:0:
+/usr/include/unistd.h:1081:12: note: expected ‘int’ but argument is of type ‘FILE {aka struct _IO_FILE}’
+ extern int lockf (int __fd, int __cmd, __off_t __len) __wur;
+            ^
