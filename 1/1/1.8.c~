@@ -17,7 +17,7 @@ int wait_mark;
 int main()
 {
     int p1, p2, stdout;
-    signal(SIGINT,SIG_IGN);
+//    signal(SIGINT,SIG_IGN);
     while ((p1 = fork()) == -1);    /*创建子进程p1*/
     if (p1 > 0)
     {
@@ -72,5 +72,3 @@ void stop()
 {
     wait_mark = 0;
 }
-
-

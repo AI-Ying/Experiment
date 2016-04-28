@@ -17,9 +17,8 @@ int main()
     else
     {
         printf("before execute exec\n");
-        //execl("/bin/ps","ps","-l",(char *)0);
+        execl("/bin/ps","ps","-l",(char *)0);
         printf("after execute exec\n");
-        printf("second");
     }
     sleep(5);
 
