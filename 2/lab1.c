@@ -12,5 +12,14 @@
 int main()
 {
     pid_t pid, pir;
+    int fd[2];
+    pipe(fd);
+     
+    pif = fork();
+    if (pid == 0)
+    {
+        close(fd[0]);
+        write();
+    }
 
 }
