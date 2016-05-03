@@ -17,7 +17,7 @@ int wait_mark;
 
 int main()
 {
-    signal(SIGINT, SIG_IGN);
+  //  signal(SIGINT, SIG_IGN);
     pid_t pid1, pid2;
     pid1 = fork();
     if (pid1 > 0)
