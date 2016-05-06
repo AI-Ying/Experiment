@@ -5,32 +5,49 @@
 	> Created Time: 2016年04月27日 星期三 17时35分48秒
  ************************************************************************/
 
-#include<stdio.h>
-#include<string.h>
-#include<unistd.h>
-#include<stdlib.h>
+#include <unistd.h>
+#include <signal.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <wait.h>
 
-int main()
-{
+int main(  )
+{ 
+    int pid1, pid2;
     int fd[2];
-    pid_t pid;
-    int n;
-    char buffer[256];
-    char dat[20] = "hello world\n";
-    pipe(fd);
-    pid = fork();
-    if (pid == 0)
+    char outpipe[100],inpipe[100];
+    pipe(fd);                   
+    pid1 = fork();
+    if(pid1==0)
     {
-        close(fd[1]);
-        n = read(fd[0], buffer, 256);
-        printf("child %d read %d bytes:%s", getpid(), n, buffer);
+        lockf(fd[1],1,0);
+        sprintf(outpipe,"child 1 process is sending message!");
+        write(fd[1],outpipe,50);  
+        lockf(fd[1],0,0);
+        exit(0);
     }
-
-    else
-    {
-        close(fd[0]);
-        write(fd[1], dat, strlen(dat));
-        printf("parent write%d byge:%s\n", strlen(dat), dat);
+    else    
+    {    
+        pid2 = fork();
+        if(pid2==0)
+        { 
+            lockf(fd[1],1,0);           
+            sprintf(outpipe,"child 2 process is sending message!");
+            write(fd[1],outpipe,50);
+            lockf(fd[1],0,0);
+            exit(0);
+        }
+        if (pid2 > 0)
+        {                
+            wait(0);              
+            read(fd[0],inpipe,50);   
+            printf("%s\n",inpipe);
+            wait(0);
+            read(fd[0],inpipe,50);
+            printf("%s\n",inpipe);
+            exit(0);
+        }
+      
     }
-    exit(0);
 }
