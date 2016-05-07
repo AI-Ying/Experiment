@@ -9,6 +9,7 @@
 #include <sys/ipc.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #define MSGKEY 75
 
 struct msgform
@@ -26,6 +27,7 @@ void server()
     {
         msgrcv(msgqid, &msg, 1030, 0, 0);
         printf("(server)received!\n");
+        sleep(1);
     }while(msg.mtype != 1);
     msgctl(msgqid, IPC_RMID, 0);
     exit(0);

@@ -8,6 +8,7 @@
 #include <sys/msg.h>
 #include <sys/ipc.h>
 #include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
 #define MSGKEY 75
 
@@ -27,6 +28,7 @@ void client()
         msg.mtype = i;
         printf("(client)sent!\n");
         msgsnd(msgqid, &msg, 1024, 0);
+        sleep(1);
     }
     exit(0);
 }
