@@ -26,7 +26,7 @@ void server()
     do
     {
         msgrcv(msgqid, &msg, 1030, 0, 0);
-        printf("(server)received!\n");
+        printf("(server)received! mytype = %ld\n", msg.mtype);
         sleep(1);
     }while(msg.mtype != 1);
     msgctl(msgqid, IPC_RMID, 0);

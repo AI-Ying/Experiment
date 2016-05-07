@@ -26,7 +26,7 @@ void client()
     for (i = 10; i >= 1; i--)
     {
         msg.mtype = i;
-        printf("(client)sent!\n");
+        printf("(client)sent!,mtype = %ld\n", msg.mtype);
         msgsnd(msgqid, &msg, 1024, 0);
         sleep(1);
     }
