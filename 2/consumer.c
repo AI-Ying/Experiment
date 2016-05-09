@@ -9,11 +9,12 @@
 int main()
 {
     //定义共享存储区结构体
-    struct exchange
+    struct exchange 
     {
         char buf[BUFSIZ+80];
         int seq;
     }shm;
+
     int shmid;
     unsigned char *retval;
     int producer, consumer, i;
@@ -38,9 +39,9 @@ int main()
     for (i = 0; ; i++)
     {
         semaphore_V(consumer);
-        printf("data receive:%s, sequence:%d\n", shm.buf, shm.seq);
+        printf("data receive:%s ,sequence:%d\n", retval, shm.seq);
         semaphore_P(producer);
-        if (strncmp(shm.buf, "end", 3) == 0)
+        if (strncmp(retval, "end", 3) == 0)
             break;
     }
 

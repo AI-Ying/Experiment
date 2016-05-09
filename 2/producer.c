@@ -13,16 +13,11 @@ int main()
         char buf[BUFSIZ+80];
         int seq;
     }shm;
-
     int shmid;
     unsigned char *retval;
     int producer, consumer, i;
+    char readbuf[BUFSIZ];
 
-    char readbuf()
-    {
-        char *readbuf;
-        return readbuf[100];
-    }
     //创建信号量consumer
     consumer = open_semaphore_set(ftok("consumer", 0), 1);
 
@@ -36,7 +31,7 @@ int main()
     init_a_semaphore(producer, 0, 1);
 
     //创建共享存储区用于存放生产者产生的数据
-    shmid = shmget(ftok("share", 0), sizeof(struct exchange), 0666|IPC_CREAT);
+    shmid = shmget(ftok("share", 0),sizeof(struct exchange), 0666|IPC_CREAT);
     retval = shmat(shmid, (unsigned char *)0, 0);
 
     //生产者与消费者同步
@@ -45,8 +40,7 @@ int main()
         printf("enter some text:");
         fgets(readbuf, BUFSIZ, stdin);
         semaphore_P(consumer);
-        shm.seq = i;
-        sprintf(shm.buf, "messge %4d form producer %d is\"%s\"\n", i, getpif(), readbuf());
+        sprintf(retval, "messge %2d form producer %d is \" %s \" ", i, getpid(), readbuf);
         semaphore_V(producer);
         if (strncmp(readbuf, "end", 3) == 0)
             break;
