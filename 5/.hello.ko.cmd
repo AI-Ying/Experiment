@@ -1,1 +1,0 @@
-cmd_/home/ai/Documents/Git/ComputerSystem/Experiment/Experiment/5/hello.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/ai/Documents/Git/ComputerSystem/Experiment/Experiment/5/hello.ko /home/ai/Documents/Git/ComputerSystem/Experiment/Experiment/5/hello.o /home/ai/Documents/Git/ComputerSystem/Experiment/Experiment/5/hello.mod.o
